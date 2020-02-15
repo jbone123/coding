@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-start</title>
+    <script src="../../vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <ul>
+            <li v-for="item in products">
+                <input type="number" v-model="item.inventory">
+                {{item.name}}({{item.inventory}})
+                <span v-if="item.inventory===1">卖光了</span>
+                <button v-on:click="add(item)">add</button>
+            </li>
+        </ul>
+        <div>库存总数:{{totalProducts}}</div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>

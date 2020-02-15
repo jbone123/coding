@@ -1,0 +1,17 @@
+{
+    "ret": true,
+    "data": [
+        {
+            "name": "苹果",
+            "inventory": 3
+        },
+        {
+            "name": "栗子",
+            "inventory": 1
+        },
+        {
+            "name": "香蕉",
+            "inventory": 3
+        }
+    ]
+}

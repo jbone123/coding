@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue实例</title>
+    <script src="../../vue.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        let vm = new Vue({
+            // el: "#root",
+            data: {
+                greeting: "hello",
+                name: '<b>you</b>',
+                title: '改变为title'
+            },
+            template: `
+            <div>
+                {{greeting}}
+                <span v-html="name"></span>
+                <div v-text="greeting" :title="title">这里写东西失效</div>
+
+
+                <div :title="title">{{greeting}}</div>
+                <button @click="changValue">changValue</button>
+            </div>
+            `,
+            methods: {
+                changValue() {
+                    this.greeting = this.title
+                }
+            }
+
+        })
+        vm.$mount('#root') 
+    </script>
+
+</body>
+
+</html>
