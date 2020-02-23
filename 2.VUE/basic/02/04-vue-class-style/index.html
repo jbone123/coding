@@ -8,60 +8,53 @@
     <title>vue-class-style</title>
 </head>
 <script src="../../vue.js"></script>
+<style>
+    .greet {
+        color: red;
+    }
+
+    .active {
+        font-size: 50px;
+        color: yellow;
+    }
+
+    .nomal {
+        font-size: 12px;
+    }
+</style>
 
 <body>
     <div id="root">
-        {{greeting}}
-        {{newGreeting}}
-        <!-- {{changeValue()}} -->
-        <button @click="changeValue">changeValue</button>
-        {{newMessage}}
-        <div>{{message}}--message</div>
+        <div class="nomal" ref="aaa" :class="greetClass" style="display: none;">{{greeting}}</div>
+        <div :style="haha.visible">哈哈</div>
+        <button @click="change">change</button>
     </div>
     <script>
+        Vue.config.productionTip = false
         let vm = new Vue({
             el: "#root",
             data: {
                 greeting: "hello",
-                name: 'jbone',
-                message: ''
-            },
-            computed: {
-                // 计算属性是根据他依赖的值计算的，当依赖值发生变化其跟着改变
-                // 计算属性依赖缓存
-
-                newGreeting() {
-                    // setTimeout(() => {
-                    console.log("computed")
-                    return this.greeting.split("").reverse().join("")
-                    // }, 1000);
-                    console.log('undefined')
+                greetClass: {
+                    greet: true,
+                    active: false
                 },
-                newMessage() {
-                    return `${this.greeting}   ${this.name}`
+                haha: {
+                    visible: {
+                        display: 'none',
+                        'font-size': 12 + 'px'
+                    }
                 }
 
             },
             methods: {
-                changeValue() {
-                    console.log("methods")
-                    // this.greeting = this.greeting.split("").reverse().join("")
-                    this.greeting = "abc"
-
+                change() {
+                    this.greetClass.active = "true",
+                        this.$refs.aaa.style.display = "block",
+                        this.haha.visible.display = "block"
                 }
+
             },
-            watch: {
-                // watch VS computed
-                // watch强调的是观测某个状态，更具状态的改变而去做事情
-                // 而computed强调的是更具状态返回一个新的状态
-                greeting(newValue, oldValue) {
-                    this.message = newValue + this.name
-                },
-                name(newValue, oldValue) {
-                    this.message = this.greeting + newValue
-                }
-
-            }
         })
     </script>
 </body>

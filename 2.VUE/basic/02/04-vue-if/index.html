@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-if</title>
+</head>
+<script src="../../vue.js"></script>
+<style>
+
+</style>
+
+<body>
+    <div id="root">
+        <template v-if="groupVisible">
+            <div v-if="visible">string 1</div>
+            <div v-if="!visible">string 2</div>
+            <button @click="visible=!visible">innerSwitch</button>
+        </template>
+        <div v-else>string3</div>
+        <button @click="groupVisible=!groupVisible">outSwitch</button>
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        let vm = new Vue({
+            el: "#root",
+            data: {
+                visible: true,
+                groupVisible: true,
+
+            },
+            methods: {
+
+            },
+        })
+    </script>
+</body>
+
+</html>
