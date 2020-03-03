@@ -1,0 +1,10 @@
+gitlabCi目前先放一放
+
+yarn报错：Found incompatible module
+engine "node" is incompatible with this module
+解决办法：
+`yarn config set ignore-engines true`
+
+
+项目计划
+node 掌握写包
