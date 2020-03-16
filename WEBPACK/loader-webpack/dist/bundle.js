@@ -101,10 +101,11 @@ eval("module.exports = \"jbone\";\n\n\n//# sourceURL=webpack:///./src/base.js?")
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("let name = __webpack_require__(/*! ./base */ \"./src/base.js\");\nconsole.log(name, \"name\");\n\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module 'index.less'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\nlet name = __webpack_require__(/*! ./base */ \"./src/base.js\");\n\nconsole.log(name, \"name\");\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

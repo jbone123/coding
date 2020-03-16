@@ -30,3 +30,5 @@ yarn-error.log*
 .history/
 # 解决github安全警告⚠️
 package-lock.json
+
+.favorites.json
