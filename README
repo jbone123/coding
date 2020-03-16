@@ -8,3 +8,17 @@ engine "node" is incompatible with this module
 
 项目计划
 node 掌握写包
+
+
+
+"@babel/preset-env"   // babel7 写发错误
+
+
+// babel core版本错误  babel7
+`Module build failed (from ./node_modules/babel-loader/lib/index.js):
+Error: Cannot find module '@babel/core'
+ babel-loader@8 requires Babel 7.x (the package '@babel/core'). If you'd like to use Babel 6.x ('babel-core'), you should install 'babel-loader@7'.`
+
+
+35
+//npm i tapable -D

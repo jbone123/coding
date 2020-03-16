@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue.js-Itorater</title>
+    <script src="../../vue.js"></script>
+    <style>
+      .light {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <ul>
+        <li v-for="(item, index) in fruits" :class="index==curIndex?'light':''">
+          {{index}}--{{item.name}}
+          <button v-on:click="remove(index, $event)">X</button>
+        </li>
+      </ul>
+      <div>
+        <input @keyup="move($event)" />
+      </div>
+    </div>
+    <script>
+      Vue.config.productionTip = false;
+      vm = new Vue({
+        el: "#root",
+        data: {
+          curIndex: 0,
+          fruits: [
+            {
+              name: "苹果",
+              inventory: 3
+            },
+            {
+              name: "栗子",
+              inventory: 1
+            },
+            {
+              name: "香蕉",
+              inventory: 3
+            }
+          ]
+        },
+        methods: {
+          add() {
+            // this.fruits.unshift({
+            //   name: this.name,
+            //   inventory: this.inventory
+            // });
+            // this.$set(this.fruits, 0, {
+            //   name: "橘子",
+            //   inventory: 3
+            // });
+            this.fruits.splice(0, 0, {
+              name: "a",
+              inventory: 9
+            });
+          },
+          remove(index, $event) {
+            console.log(index, $event);
+            this.fruits.splice(index, 1);
+          },
+          move(e) {
+            // 都不需要bind的操作了
+            console.log(e);
+            if (e.keyCode === 13) {
+              this.curIndex++;
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+[
+    {
+        "type": "Directory",
+        "name": "/Users/apple/Desktop/coding/WEBPACK/loader-webpack/node_modules/webpack",
+        "parent_id": null,
+        "workspaceRoot": "/Users/apple/Desktop/coding/WEBPACK/loader-webpack",
+        "workspacePath": "node_modules/webpack",
+        "id": "rq35etbx0j92Bisu"
+    },
+    {
+        "type": "Directory",
+        "name": "/Users/apple/Desktop/coding/WEBPACK/loader-webpack/node_modules/webpack-cli",
+        "parent_id": null,
+        "workspaceRoot": "/Users/apple/Desktop/coding/WEBPACK/loader-webpack",
+        "workspacePath": "node_modules/webpack-cli",
+        "id": "KYdTy7kUe5qVPFn1"
+    }
+]

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue.js-Itorater</title>
+    <script src="../../vue.js"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <ul>
+        <li v-for="(item, index) in fruits">{{index}}--{{item.name}}</li>
+      </ul>
+      <div>
+        名称：
+        <input type="text" v-model="name" />
+        库存：
+        <input type="number" v-model="inventory" />
+        <button @click="add">add</button>
+      </div>
+    </div>
+    <script>
+      vm = new Vue({
+        el: "#root",
+        data: {
+          fruits: [
+            {
+              name: "苹果",
+              inventory: 3
+            },
+            {
+              name: "栗子",
+              inventory: 1
+            },
+            {
+              name: "香蕉",
+              inventory: 3
+            }
+          ]
+        },
+        methods: {
+          add() {
+            // this.fruits.unshift({
+            //   name: this.name,
+            //   inventory: this.inventory
+            // });
+            // this.$set(this.fruits, 0, {
+            //   name: "橘子",
+            //   inventory: 3
+            // });
+            this.fruits.splice(0, 0, {
+              name: "a",
+              inventory: 9
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

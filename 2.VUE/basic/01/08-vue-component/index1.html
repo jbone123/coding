@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue.js-components</title>
+    <script src="../../vue.js"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <todo-list></todo-list>
+    </div>
+    <script>
+      Vue.component("todo-list", {
+        template: `
+          <ul>
+            <li>todo-list1</li>
+            <li>todo-list2</li>
+            <li>todo-list3</li>
+          </ul>
+        `
+      });
+      vm = new Vue({
+        el: "#root"
+      });
+    </script>
+  </body>
+</html>

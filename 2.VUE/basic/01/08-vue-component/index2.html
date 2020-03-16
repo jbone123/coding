@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue.js-Form</title>
+    <script src="../../vue.js"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- <input type="text" v-model="title" /> -->
+      <!-- v-model就是一个语法糖 -->
+      <input type="text" :value="title" @input="changeValue($event)" />
+      {{title}}
+    </div>
+    <script>
+      vm = new Vue({
+        el: "#root",
+        data: {
+          title: "xxoo"
+        },
+        methods: {
+          changeValue(e) {
+            this.title = e.target.value;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

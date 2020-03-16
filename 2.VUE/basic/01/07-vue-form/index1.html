@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue.js-Form</title>
+    <script src="../../vue.js"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- <input type="text" v-model="title" /> -->
+      <!-- v-model就是一个语法糖 -->
+      <input type="text" :value="title" @input="changeValue($event)" />
+      <textarea name="" id="" cols="30" rows="10" v-model="textAV"></textarea>
+      <!-- 篮球：<input
+        type="checkbox"
+        value="basketball"
+        name=""
+        id=""
+        v-model="checkVal"
+      />
+      足球：<input
+        type="checkbox"
+        value="football"
+        name=""
+        id=""
+        v-model="checkVal"
+      />
+      乒乓球：<input
+        type="checkbox"
+        value="pingpangball"
+        name=""
+        id=""
+        v-model="checkVal"
+      />
+      {{checkVal}} -->
+      {{title}}
+
+      <!-- <div>
+        篮球：<input type="radio" value="basketball" v-model="radioVal" />
+        足球：<input type="radio" value="football" v-model="radioVal" />
+        乒乓球：<input type="radio" value="pingpangball" v-model="radioVal" />
+        {{radioVal}}
+      </div> -->
+      <!-- <div>
+        <select name="" id="" v-model="selectVal" multiple>
+          <option value="" disabled>请选择</option>
+          <option value="bj">北京</option>
+          <option value="sh">上海</option>
+          <option value="sz">深圳</option>
+        </select>
+        {{selectVal}}---{{allSelect}}
+      </div> -->
+      <div><input type="text" v-model.lazy="number" />{{number}}</div>
+      <div><input type="text" v-model.trim="number" />{{number}}</div>
+      <div><input type="text" v-model.number="number" />{{number}}</div>
+    </div>
+    <script>
+      vm = new Vue({
+        el: "#root",
+        data: {
+          title: "xxoo",
+          textAV: "111",
+          // checkVal: []
+          // radioVal: "basketball"
+          selectVal: [],
+          number: ""
+        },
+        methods: {
+          changeValue(e) {
+            this.title = e.target.value;
+          }
+        },
+        computed: {
+          allSelect() {
+            return this.selectVal.join(",");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
