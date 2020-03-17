@@ -2,6 +2,8 @@
  * @param source 文件的原内容
  */
 const path = require("path");
+const loaderUtils = require("loader-utils");
+const schemaUtils = require("schema-utils");
 module.exports = function(source) {
   // console.log(this);
   // let callback = this.async();
